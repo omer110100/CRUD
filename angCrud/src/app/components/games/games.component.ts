@@ -31,7 +31,6 @@ export class GamesComponent implements OnInit {
 
   getGamesData(){
     this.dataService.getData().subscribe(res =>{
-      console.log(res);
       this.games = res;
     });
   }
@@ -39,10 +38,8 @@ export class GamesComponent implements OnInit {
   onKey(event: any) { // without type info
     this.values = event.target.value;
     this.search.name = this.values;
-    console.log(this.search);
     if(this.search.name){
       this.dataService.getSearchedData(this.search).subscribe(res =>{
-        console.log(res);
         this.games = res;
       });
     }
@@ -70,12 +67,8 @@ export class GamesComponent implements OnInit {
   }
 
   delete_game(id: Game){
-    console.log(id);
     this.dataService.deleteData(id).subscribe(res=>{
       this.getGamesData();
     });
-  }
-  edit_game(id: Game){
-    console.log(id);
   }
 }
