@@ -1,36 +1,29 @@
 # Angular and Laravel Together
-This project is the final outcome of my video tutorial on how to use Angular and Laravel together.
-So make sure you watch that video from the following link to make the most out of this package.
-[https://youtu.be/97BggEw0dJI](https://youtu.be/97BggEw0dJI)
+This project is the final outcome of making a CRUD app using Angular and Laravel together.
 
 ### Key features
 
  * Not required to integrate JSON Web Token (JWT) or Laravel Passport.
  * Step by step setup guide (Including some useful hints)
- * Non-destructive Authentication in Laravel
- * Non-destructive TS-Lint in Angular 
- * Cross-Origin Resource Sharing already enabled
- * Latest Angular Version 4.3
- * Latest Laravel Version 5.5
- * Video tutorial available on youtube on how this project was created. So you know what exactly you need to modify in order to meet your project requirements.
+ * Angular Version 12.12.1
+ * Laravel Version 8.54.0
  * Easy to setup
  * Laravel and Angular project separated(Modouled)
  * Backend developer and front-end can work completely isolated from each other.
- * Works with any angular theme from the Themeforest.
 
-####After you watch the video mentioned above, please the follow the following steps to setup the project on your machine.
+####Please follow the following steps to setup the project on your machine.
 
 ### Setup Angular Project:
 
 Clone this project
 ```sh
-$ git clone https://github.com/nechar/Angular-Laravel.git
+$ git clone https://github.com/omer110100/CRUD.git
 ```
  
 ### Setup Angular Project:
 Open a terminal or command prompt and go to angular-module
 ```sh
-$ cd Angular-Laravel/angular-module
+$ cd smarti/angCrud
 ```
 
 Install node dependencies
@@ -61,7 +54,7 @@ Note to remember: In case you run "ng serve" anytime later, the final build insi
 
 Open a new Terminal and go to laravel-module
 ```sh
-$ cd /laravel-module
+$ cd /larCrud
 ```
 
 Install composer dependencies
@@ -103,15 +96,3 @@ See check to see if it works in the browser
 [http://localhost:8000](http://localhost:8000/)
 
 
-Create your first user from registration page
-
-[http://localhost:8000/register](http://localhost:8000/register)
-
-
-Congratulations, you have successfully completed the project setup.
-The following command is the most important command that you might want to use over and over again after any modification in angular.
-So, make sure you copy this command in a safe place.
-During production, you will need to change the URL to whatever your URL is with a prefix /app/
-```sh
-$ ng build --base-href http://localhost:8000/app/
-```
