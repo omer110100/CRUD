@@ -23,7 +23,7 @@ $ git clone https://github.com/omer110100/CRUD.git
 ### Setup Angular Project:
 Open a terminal or command prompt and go to angular-module
 ```sh
-$ cd smarti/angCrud
+$ cd CRUD-main/angCrud
 ```
 
 Install node dependencies
@@ -54,7 +54,7 @@ Note to remember: In case you run "ng serve" anytime later, the final build insi
 
 Open a new Terminal and go to laravel-module
 ```sh
-$ cd /larCrud
+$ cd CRUD-main/larCrud
 ```
 
 Install composer dependencies
