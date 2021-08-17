@@ -15,7 +15,7 @@ This project is the final outcome of making a CRUD app using Angular and Laravel
 
 ### Setup Angular Project:
 
-Clone this project
+Clone this project into a new folder by copy this code into the git bash terminal
 ```sh
 $ git clone https://github.com/omer110100/CRUD.git
 ```
