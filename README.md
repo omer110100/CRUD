@@ -60,7 +60,7 @@ $ copy .env.example .env
 ```
 
 
-Change the database credentials of .env files
+Change the database credentials of .env files (make sure to create a database in mysql)
 ```
 DB_DATABASE = your_database_name
 DB_USERNAME = your_database_username
