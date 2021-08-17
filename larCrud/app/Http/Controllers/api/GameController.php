@@ -51,6 +51,13 @@ class GameController extends Controller
         $game = Game::findOrFail($id);
         return new GameResource($game);
     }
+    public function showMany($name)
+    {
+        //Get a certain games by search
+        $game = Game::query()->where('name','LIKE',"{$name}%")->get();
+        return new GameResource($game);
+    
+    }
 
     /**
      * Update the specified resource in storage.

@@ -22,6 +22,8 @@ Route::get('games',[GameController::class, 'index']);//getting all the games
 
 Route::get('game/{id}',[GameController::class, 'show']);//getting a certain game by id
 
+Route::get('game/search/{name}',[GameController::class, 'showMany']);//getting a certain game by id
+
 Route::post('game',[GameController::class, 'store']);//creating new game
 
 Route::put('game/update/{id}',[GameController::class, 'update']);//updating a game

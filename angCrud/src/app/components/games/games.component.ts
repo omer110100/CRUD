@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Game } from 'src/app/game';
+import { Search } from 'src/app/search';
 import { DataService } from 'src/app/service/data.service';
-
 
 @Component({
   selector: 'app-games',
@@ -9,8 +10,19 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
+  addGameForm = new FormGroup({
+    name: new FormControl('',Validators.required),
+    price: new FormControl('',Validators.required),
+    platform: new FormControl('',Validators.required),
+  });
+  searchGameForm = new FormGroup({
+    search: new FormControl(''),
+  });
+
+  values = '';
   games:any;
   game = new Game();
+  search = new Search();
   constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
@@ -24,9 +36,34 @@ export class GamesComponent implements OnInit {
     });
   }
 
+  onKey(event: any) { // without type info
+    this.values = event.target.value;
+    this.search.name = this.values;
+    console.log(this.search);
+    if(this.search.name){
+      this.dataService.getSearchedData(this.search).subscribe(res =>{
+        console.log(res);
+        this.games = res;
+      });
+    }
+    else{
+      this.getGamesData();
+    }
+  }
   insertData(){
-    console.log(this.game);
-    this.dataService.insertData(this.game).subscribe(res =>{
+    if(!this.addGameForm.value.name){
+      alert('name required!');
+      return;
+    }
+    if(!this.addGameForm.value.price){
+      alert('price required!');
+      return;
+    }
+    if(!this.addGameForm.value.platform){
+      alert('platform required!');
+      return;
+    }
+    this.dataService.insertData(this.addGameForm.value).subscribe(res =>{
       console.log('A game has been added successfully');
       this.getGamesData();
     });

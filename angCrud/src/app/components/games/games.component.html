@@ -1,16 +1,16 @@
 <h1 class='display-4'><u>Add new game:</u></h1>
-<form (ngSubmit)="insertData()">
+<form [formGroup]="addGameForm" (ngSubmit)="insertData()">
   <div class="form-group">
     <label for="game_name">Game name:</label>
-    <input type="text" class="form-control" id="game_name" name="game_name" [(ngModel)]="game.name" placeholder="Enter game" >
+    <input type="text" class="form-control" id="game_name" name="game_name"  placeholder="Enter game" formControlName="name" required >
   </div>
   <div class="form-group">
     <label for="game_price">Game price:</label>
-    <input type="number" class="form-control" id="game_price" [(ngModel)]="game.price" name="game_price" min="0" max="9999" >
+    <input type="number" class="form-control" id="game_price"  name="game_price" min="0" max="9999" formControlName="price" >
   </div>
   <div class="form-group">
     <label for="game_platform">Game platform:</label>
-    <select class="form-control" id="game_platform" [(ngModel)]="game.platform" name="game_platform" >
+    <select class="form-control" id="game_platform" name="game_platform" formControlName="platform" >
       <option>All</option>
       <option>PC</option>
       <option>Xbox</option>
@@ -23,11 +23,17 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<hr>
+<form [formGroup]="searchGameForm" >
+  <div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Search" name="search" formControlName="search" (keyup)="onKey($event)" />
+  </div>
+</form>
 <br>
 <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <!-- <th scope="col">#</th> -->
         <th scope="col">Name</th>
         <th scope="col">Price</th>
         <th scope="col">Platform</th>
@@ -36,13 +42,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let game of games">
-        <th scope="row">{{game.id}}</th>
+        <!-- <th scope="row">{{game.id}}</th> -->
         <td>{{game.name}}</td>
         <td>{{game.price}}</td>
         <td>{{game.platform}}</td>
         <td>
           <div class="bd-example ">
-            <button type="button" class="btn btn-outline-primary" [routerLink]="['edit/{{game.id}}']" routerLinkActive="router-link-active"  (click)="edit_game(game.id)">Edit</button>
+            <button type="button" class="btn btn-outline-primary" routerLink="edit/{{game.id}}" >Edit</button>
             <button type="button" class="btn btn-outline-danger mx-2" (click)="delete_game(game.id)">Delete</button>
           </div>
         </td>
