@@ -43,7 +43,7 @@ See check to see if it works in the browser (Optional: It is required during fro
 
 
 
-Open a new terminal and build the project into the public directory of laravel-module. (Don't miss the final slash)
+Open a new terminal and build the project into the public directory of larCrud. (Don't miss the final slash)
 ```sh
 $ ng build --base-href http://localhost:8000/app/
 ```
