@@ -52,18 +52,20 @@ export class GamesComponent implements OnInit {
       alert('name required!');
       return;
     }
-    if(!this.addGameForm.value.price || this.addGameForm.value.price==0){
+    if(this.addGameForm.value.price=='0' || this.addGameForm.value.price){
+      if(!this.addGameForm.value.platform){
+        alert('platform required!');
+        return;
+      }
+      this.dataService.insertData(this.addGameForm.value).subscribe(res =>{
+        console.log('A game has been added successfully');
+        this.getGamesData();
+      });
+    }
+    else if(!this.addGameForm.value.price){
       alert('price required!');
       return;
     }
-    if(!this.addGameForm.value.platform){
-      alert('platform required!');
-      return;
-    }
-    this.dataService.insertData(this.addGameForm.value).subscribe(res =>{
-      console.log('A game has been added successfully');
-      this.getGamesData();
-    });
   }
 
   delete_game(id: Game){
