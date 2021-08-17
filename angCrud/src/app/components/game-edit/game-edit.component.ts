@@ -21,15 +21,12 @@ export class GameEditComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.params.id);
     this.id = this.route.snapshot.params.id
     this.getData();
   }
 
   getData(){
-    console.log(this.editGameForm.value);
     this.dataService.getGameById(this.id).subscribe(res =>{
-      console.log(res);
       this.data = res;
       this.game = this.data
       this.editGameForm.patchValue({
