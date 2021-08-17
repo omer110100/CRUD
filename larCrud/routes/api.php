@@ -24,6 +24,6 @@ Route::get('game/{id}',[GameController::class, 'show']);//getting a certain game
 
 Route::post('game',[GameController::class, 'store']);//creating new game
 
-Route::put('game/{id}',[GameController::class, 'update']);//updating a game
+Route::put('game/update/{id}',[GameController::class, 'update']);//updating a game
 
-Route::delete('game/{id}',[GameController::class, 'destroy']);//deleting a game
+Route::delete('game/delete/{id}',[GameController::class, 'destroy']);//deleting a game
