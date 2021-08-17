@@ -42,14 +42,6 @@ See check to see if it works in the browser (Optional: It is required during fro
 [http://localhost:4200](http://localhost:4200/)
 
 
-
-Open a new terminal and build the project into the public directory of larCrud. (Don't miss the final slash)
-```sh
-$ ng build --base-href http://localhost:8000/app/
-```
-Note to remember: In case you run "ng serve" anytime later, the final build inside laravel-module/public/app/ folder will be deleted. So, make that you build the project again if that happens.
-
-
 ### Setup Laravel Project:
 
 Open a new Terminal and go to laravel-module
