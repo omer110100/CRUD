@@ -64,7 +64,7 @@ $ composer install
 
 Create an .env file and copy the contents of .env.example into it
 ```sh
-$ cp .env.example .env
+$ copy .env.example .env
 ```
 
 
