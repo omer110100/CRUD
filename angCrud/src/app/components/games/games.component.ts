@@ -53,8 +53,10 @@ export class GamesComponent implements OnInit {
       return;
     }
     if(!this.addGameForm.value.price || this.addGameForm.value.price<0){
-      alert('price required!');
-      return;
+      if(this.addGameForm.value.price !== 0){
+        alert('price required!');
+        return;
+      }
     }
     if(!this.addGameForm.value.platform){
         alert('platform required!');
