@@ -52,7 +52,7 @@ export class GamesComponent implements OnInit {
       alert('name required!');
       return;
     }
-    if(!this.addGameForm.value.price){
+    if(!this.addGameForm.value.price || this.addGameForm.value.price<0){
       alert('price required!');
       return;
     }
